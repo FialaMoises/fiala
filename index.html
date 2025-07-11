@@ -5,28 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Marcos Fiala - Corretor de Imóveis</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico">
+  <meta property="og:title" content="Marcos Fiala - Corretor de Imóveis">
+  <meta property="og:description" content="Especialista em imóveis residenciais e comerciais em Belém.">
+  <meta property="og:image" content="capa.jpg">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Poppins', sans-serif;
-      background-color: #0c0c0c;
+      background-color: #000000;
       color: #ffffff;
       line-height: 1.6;
+    }
+    nav {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      background-color: #111;
+      padding: 10px 0;
+      text-align: center;
+      z-index: 999;
+    }
+    nav a {
+      margin: 0 15px;
+      color: #FFD700;
+      text-decoration: none;
+      font-weight: bold;
     }
     header {
       background: radial-gradient(circle at center, rgba(255, 215, 0, 0.1), #000);
       text-align: center;
-      padding: 60px 20px;
+      padding: 100px 20px 60px;
     }
     header img {
       width: 220px;
       border-radius: 12px;
       box-shadow: 0 6px 14px rgba(255, 215, 0, 0.4);
       margin-bottom: 20px;
+    }
+    .typing-text {
+      font-size: 1.2rem;
+      color: #f0e68c;
+      margin-top: 10px;
+      height: 30px;
     }
     main {
       padding: 40px 20px;
@@ -35,10 +56,10 @@
     }
     .section {
       margin-bottom: 40px;
-      background: #111;
+      background: #000000;
       border-radius: 10px;
       padding: 30px;
-      box-shadow: 0 2px 10px rgba(255, 215, 0, 0.1);
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
     }
     .section h2 {
       color: #f8c400;
@@ -47,6 +68,7 @@
     blockquote {
       font-style: italic;
       color: #f0e68c;
+      text-align: center;
     }
     footer {
       background-color: #000;
@@ -56,13 +78,8 @@
       margin-top: 60px;
       font-size: 0.9rem;
     }
-    a {
-      color: #f0e68c;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
+    a { color: #f0e68c; text-decoration: none; }
+    a:hover { text-decoration: underline; }
     .metricas {
       display: flex;
       justify-content: space-around;
@@ -76,29 +93,101 @@
       font-size: 2rem;
       color: #FFD700;
     }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+    form button {
+      background-color: #FFD700;
+      color: #000;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .carousel {
+      overflow: hidden;
+      width: 100%;
+      padding: 20px 0;
+      position: relative;
+    }
+    .carousel-track {
+      display: flex;
+      gap: 30px;
+      animation: scrollCarousel 5s linear infinite;
+    }
+    .carousel-track img {
+      height: 70px;
+      object-fit: contain;
+      filter: brightness(1.2);
+    }
+    @keyframes scrollCarousel {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
   </style>
 </head>
 <body>
+  <nav>
+    <a href="#Sobre nós">Sobre nós</a>
+    <a href="#missao">Missão</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#contato">Contato</a>
+    <a href="#localizacao">Localização</a>
+  </nav>
+
   <header>
     <img src="WhatsApp Image 2025-07-07 at 20.28.23.jpeg" alt="Logo FIALA Imóveis">
     <h1>Marcos Fiala</h1>
     <p>Corretor de Imóveis - CRECI 4077</p>
+    <div class="typing-text" id="typing"></div>
   </header>
 
   <main>
-    <section class="section">
-      <h2>Sempre buscando o melhor</h2>
-      <p>Para os nossos clientes com transparência, segurança e excelência, assim atingimos e superamos expectativas, fazendo a qualidade dos serviços e a satisfação dos nossos clientes seja garantida.</p>
-      <p>Utilizamos nossa experiência no mercado imobiliário para superar novos desafios, mantendo-se preparada para o futuro do setor.</p>
-      <p>Sempre estamos em evolução constante.</p>
-    </section>
 
-    <section class="section">
-      <h2>Serviços</h2>
-      <p>Trabalhamos com imóveis comerciais e residenciais. Se você precisa vender, comprar ou alugar, estamos à disposição para ajudar com segurança, transparência e honestidade.</p>
-    </section>
+  <section class="section" id="sobre-nos" style="display: flex; align-items: flex-start; gap: 30px; flex-wrap: wrap;">
+    <img src="imagem/marcos.jpeg" alt="Marcos Fiala" style="width: 180px; border-radius: 10px; box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);">
+    <div style="flex: 1; min-width: 250px;">
+      <h2>Sobre Nós</h2>
+      <p>
+        Meu nome é Marcos Fiala, tenho 56 anos e sou corretor de imóveis com orgulho desde 2007. São mais de 18 anos dedicados ao mercado imobiliário, ajudando famílias e empresas a realizarem seus sonhos com segurança, transparência e comprometimento.
+      </p>
+      <p>
+        Ao longo desses anos, construí uma trajetória sólida e confiável, com foco em entender profundamente as necessidades de cada cliente, seja na busca pela casa ideal, investimento seguro ou imóvel comercial estratégico.
+      </p>
+    </div>
+  </section>
 
-    <section class="section">
+  <section class="section" id="missao">
+  <h2>Sempre buscando o melhor</h2>
+  <p>
+    Nosso compromisso é entregar mais do que imóveis — é proporcionar confiança, tranquilidade e satisfação em cada negociação. Atuamos com transparência, segurança e excelência em cada etapa do processo, porque acreditamos que superar expectativas não é um diferencial, é uma obrigação com quem confia no nosso trabalho.
+  </p>
+  <p>
+    Acreditamos que o melhor resultado vem de um atendimento humano, dedicado e atento às reais necessidades de cada cliente. É assim que construímos histórias, firmamos parcerias e conquistamos resultados duradouros.
+  </p>
+  </section>
+
+
+  <section class="section" id="servicos">
+    <h2>Serviços</h2>
+    <p>
+      Atuamos com excelência na intermediação de imóveis residenciais e comerciais, oferecendo um atendimento personalizado para cada tipo de cliente. Se você procura comprar, vender ou alugar, estamos prontos para ajudar com agilidade, clareza e profissionalismo.
+    </p>
+    <p>
+      Trabalhamos com uma carteira diversificada de imóveis — desde casas e apartamentos até salas comerciais, terrenos e empreendimentos prontos para investir. Cada negociação é acompanhada de perto, com foco em garantir segurança jurídica e total transparência durante todo o processo.
+    </p>
+    <p>
+      Seja para morar, empreender ou investir, você pode contar com a nossa experiência para fazer o melhor negócio.
+    </p>
+  </section>
+
+
+    <section class="section" id="contato">
       <h2>Contato</h2>
       <p>Horário de atendimento: Segunda a sexta das 8h às 18h, Sábados das 8h às 12h</p>
       <p>Telefone: <a href="tel:+5591988410321">(91) 98841-0321</a></p>
@@ -106,64 +195,119 @@
     </section>
 
     <section class="section">
-      <h2>Sobre Mim</h2>
-      <p>Com mais de 30 anos de experiência no mercado imobiliário paraense, atuo com foco em imóveis residenciais e comerciais em Belém e região metropolitana. Minha missão é ajudar você a encontrar o imóvel ideal com segurança, honestidade e atenção total às suas necessidades.</p>
-    </section>
-
-    <section class="section" style="text-align: center;">
-      <blockquote>"Um bom imóvel é mais do que uma chave — é o começo de uma nova etapa da sua vida."</blockquote>
+      <h2>Envie sua mensagem</h2>
+      <form>
+        <input type="text" placeholder="Seu nome" required>
+        <input type="email" placeholder="Seu email" required>
+        <textarea placeholder="Sua mensagem..." rows="4" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
     </section>
 
     <section class="section metricas">
-      <div>
-        <h3>+18 anos</h3>
-        <p>de experiência</p>
-      </div>
-      <div>
-        <h3>200+</h3>
-        <p>clientes atendidos</p>
-      </div>
-      <div>
-        <h3>100%</h3>
-        <p>comprometimento</p>
-      </div>
+      <div><h3>+18 anos</h3><p>de experiência</p></div>
+      <div><h3>200+</h3><p>clientes atendidos</p></div>
+      <div><h3>100%</h3><p>comprometimento</p></div>
     </section>
 
-    <section class="section">
+    <section class="section" id="localizacao">
       <h2>Localização</h2>
       <iframe src="https://www.google.com/maps?q=Bel%C3%A9m+-+PA&output=embed" width="100%" height="300" style="border:0; border-radius: 10px;" allowfullscreen loading="lazy"></iframe>
     </section>
-  <section class="section">
-  <h2 style="text-align: center;">Com quem já trabalhei</h2>
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 30px;">
-    <img src="imagem/Assaí_Atacadista_logo.png" alt="Logo 1" style="height: 70px; object-fit: contain; filter: brightness(1.2);">
-    <img src="imagem/ATACADÃO FERRO E AÇO.jpeg" alt="Logo 2" style="height: 70px; object-fit: contain; filter: brightness(1.2);">
-    <img src="imagem/Auto-Norte-Vertical.png" alt="Logo 3" style="height: 70px; object-fit: contain; filter: brightness(1.2);">
-    <img src="imagem/boulevard.jpeg" alt="Logo 4" style="height: 70px; object-fit: contain; filter: brightness(1.2);">
-    <img src="imagem/caixa.png" alt="Logo 5" style="height: 70px; object-fit: contain; filter: brightness(1.2);">
-    <img src="imagem/castanehira.jpeg" alt="Logo 6" style="height: 70px; object-fit: contain; filter: brightness(1.2);">    
-    <img src="imagem/comprar-Cometa_Motocenter.png" alt="Logo 7" style="height: 70px; object-fit: contain; filter: brightness(1.2);">
-    <img src="imagem/correios.png" alt="Logo 8" style="height: 70px; object-fit: contain; filter: brightness(1.2);">
-    <img src="imagem/ECONOMICO.avif" alt="Logo 9" style="height: 70px; object-fit: contain; filter: brightness(1.2);">
-    <img src="imagem/grao-para.png" alt="Logo 10" style="height: 70px; object-fit: contain; filter: brightness(1.2);">
-    <img src="imagem/HDS.webp" alt="Logo 11" style="height: 70px; object-fit: contain; filter: brightness(1.2);">
-    <img src="imagem/logo-revemar-home.png" alt="Logo 12" style="height: 70px; object-fit: contain; filter: brightness(1.2);">
-    <img src="imagem/lojas-americanas.png" alt="Logo 13" style="height: 70px; object-fit: contain; filter: brightness(1.2);">
-    <img src="imagem/parque.png" alt="Logo 14" style="height: 70px; object-fit: contain; filter: brightness(1.2);">
-    <img src="imagem/shopee.png" alt="Logo 15" style="height: 70px; object-fit: contain; filter: brightness(1.2);">
-    <img src="imagem/shopping-metropole.jpeg" alt="Logo 16" style="height: 70px; object-fit: contain; filter: brightness(1.2);">
-    <img src="imagem/supermercardo-lider.webp" alt="Logo 17" style="height: 70px; object-fit: contain; filter: brightness(1.2);">
 
-  </div>
-</section>
-</main>
-
-  <a href="https://wa.me/559188410321" style="position:fixed; bottom:20px; right:20px; background-color:#25D366; color:white; border-radius:50px; padding:12px 16px; box-shadow:0 2px 6px rgba(0,0,0,0.3); text-decoration:none; font-weight:bold; z-index:999;">
-    WhatsApp
-  </a>
+    <section class="section">
+      <h2 style="text-align: center;">Com quem já trabalhei</h2>
+      <div class="carousel">
+        <div class="carousel-track">
+        <img src="imagem/Assaí_Atacadista_logo.png" alt="Logo 1">
+        <img src="imagem/ATACADÃO FERRO E AÇO.jpeg" alt="Logo 2">
+        <img src="imagem/Auto-Norte-Vertical.png" alt="Logo 3">
+        <img src="imagem/boulevard.jpeg" alt="Logo 4">
+        <img src="imagem/caixa.png" alt="Logo 5">
+        <img src="imagem/comprar-Cometa_Motocenter.png" alt="Logo 7">
+        <img src="imagem/correios.png" alt="Logo 8">
+        <img src="imagem/ECONOMICO.avif" alt="Logo 9">
+        <img src="imagem/grao-para.png" alt="Logo 10">
+        <img src="imagem/HDS.webp" alt="Logo 11">
+        <img src="imagem/logo-revemar-home.png" alt="Logo 12">
+        <img src="imagem/lojas-americanas.png" alt="Logo 13">
+        <img src="imagem/parque.png" alt="Logo 14">
+        <img src="imagem/shopee.png" alt="Logo 15">
+        <img src="imagem/shopping-metropole.jpeg" alt="Logo 16">
+        <img src="imagem/supermercardo-lider.webp" alt="Logo 17">
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
     <p>&copy; 2025 Marcos Fiala - Corretor de Imóveis</p>
   </footer>
+
+  <script>
+    const text = "Encontre o imóvel ideal em Belém com quem entende do assunto.";
+    let i = 0;
+    function type() {
+      if (i < text.length) {
+        document.getElementById("typing").textContent += text.charAt(i);
+        i++;
+        setTimeout(type, 50);
+      }
+    }
+
+    function animateHeading(el, text) {
+      let i = 0;
+      function typeChar() {
+        if (i < text.length) {
+          el.textContent += text.charAt(i);
+          i++;
+          setTimeout(typeChar, 40);
+        }
+      }
+      typeChar();
+    }
+
+    window.onload = () => {
+      type();
+      const headings = document.querySelectorAll('h2');
+      headings.forEach(el => {
+        const original = el.textContent;
+        el.textContent = '';
+        const observer = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              animateHeading(el, original);
+              obs.unobserve(el);
+            }
+          });
+        }, { threshold: 0.5 });
+        observer.observe(el);
+      });
+    };
+  </script>
+
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script>
+    ScrollReveal().reveal('.section', {
+      distance: '40px',
+      duration: 800,
+      easing: 'ease-out',
+      origin: 'bottom',
+      interval: 150
+    });
+
+    ScrollReveal().reveal('.metricas div', {
+      interval: 200,
+      origin: 'bottom',
+      distance: '30px'
+    });
+
+    ScrollReveal().reveal('section img', {
+      interval: 100,
+      scale: 0.1,
+      duration: 6000,
+      reset: false
+    });
+  </script>
 </body>
 </html>
