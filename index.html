@@ -25,6 +25,7 @@
       padding: 10px 0;
       text-align: center;
       z-index: 999;
+      box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3); /* sombra dourada suave */
     }
     nav a {
       margin: 0 15px;
@@ -109,26 +110,24 @@
       font-weight: bold;
       cursor: pointer;
     }
-    .carousel {
-      overflow: hidden;
-      width: 100%;
-      padding: 20px 0;
-      position: relative;
-    }
-    .carousel-track {
+    .logos-empresas {
       display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 30px;
-      animation: scrollCarousel 5s linear infinite;
+      padding: 20px 0;
     }
-    .carousel-track img {
-      height: 70px;
+    .logos-empresas img {
+      height: 60px;
+      max-width: 120px;
       object-fit: contain;
       filter: brightness(1.2);
+      transition: transform 0.3s ease;
     }
-    @keyframes scrollCarousel {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+    .logos-empresas img:hover {
+      transform: scale(1.1);
     }
+
   </style>
 </head>
 <body>
@@ -149,9 +148,11 @@
 
   <main>
 
-  <section class="section" id="sobre-nos" style="display: flex; align-items: flex-start; gap: 30px; flex-wrap: wrap;">
-    <img src="imagem/marcos.jpeg" alt="Marcos Fiala" style="width: 180px; border-radius: 10px; box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);">
-    <div style="flex: 1; min-width: 250px;">
+  <section class="section" id="sobre-nos" style="display: flex; align-items: stretch; gap: 30px; flex-wrap: wrap; box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);">
+    <div style="flex: 1; min-width: 220px; max-width: 300px; overflow: hidden; border-radius: 10px;">
+      <img src="imagem/marcos.jpeg" alt="Marcos Fiala" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+    </div>
+    <div style="flex: 2; min-width: 250px;">
       <h2>Sobre Nós</h2>
       <p>
         Meu nome é Marcos Fiala, tenho 56 anos e sou corretor de imóveis com orgulho desde 2007. São mais de 18 anos dedicados ao mercado imobiliário, ajudando famílias e empresas a realizarem seus sonhos com segurança, transparência e comprometimento.
@@ -187,12 +188,14 @@
   </section>
 
 
-    <section class="section" id="contato">
-      <h2>Contato</h2>
-      <p>Horário de atendimento: Segunda a sexta das 8h às 18h, Sábados das 8h às 12h</p>
-      <p>Telefone: <a href="tel:+5591988410321">(91) 98841-0321</a></p>
-      <p>WhatsApp: <a href="https://wa.me/559188410321">(91) 8841-0321</a></p>
-    </section>
+  <section class="section" id="contato">
+    <h2>Contato</h2>
+    <p>Horário de atendimento: Segunda a sexta das 8h às 18h</p>
+    <p>Telefone: <a href="tel:+5591988410321">(91) 98841-0321</a></p>
+    <p>WhatsApp: <a href="https://wa.me/559188410321" target="_blank">(91) 8841-0321</a></p>
+    <p>LinkedIn: <a href="https://br.linkedin.com/in/fiala-im%C3%B3veis-marcos-fiala-%F0%9F%87%A7%F0%9F%87%B7-40139227" target="_blank">Marcos Fiala no LinkedIn</a></p>
+  </section>
+
 
     <section class="section">
       <h2>Envie sua mensagem</h2>
@@ -215,29 +218,30 @@
       <iframe src="https://www.google.com/maps?q=Bel%C3%A9m+-+PA&output=embed" width="100%" height="300" style="border:0; border-radius: 10px;" allowfullscreen loading="lazy"></iframe>
     </section>
 
-    <section class="section">
-      <h2 style="text-align: center;">Com quem já trabalhei</h2>
-      <div class="carousel">
-        <div class="carousel-track">
-        <img src="imagem/Assaí_Atacadista_logo.png" alt="Logo 1">
-        <img src="imagem/ATACADÃO FERRO E AÇO.jpeg" alt="Logo 2">
-        <img src="imagem/Auto-Norte-Vertical.png" alt="Logo 3">
-        <img src="imagem/boulevard.jpeg" alt="Logo 4">
-        <img src="imagem/caixa.png" alt="Logo 5">
-        <img src="imagem/comprar-Cometa_Motocenter.png" alt="Logo 7">
-        <img src="imagem/correios.png" alt="Logo 8">
-        <img src="imagem/ECONOMICO.avif" alt="Logo 9">
-        <img src="imagem/grao-para.png" alt="Logo 10">
-        <img src="imagem/HDS.webp" alt="Logo 11">
-        <img src="imagem/logo-revemar-home.png" alt="Logo 12">
-        <img src="imagem/lojas-americanas.png" alt="Logo 13">
-        <img src="imagem/parque.png" alt="Logo 14">
-        <img src="imagem/shopee.png" alt="Logo 15">
-        <img src="imagem/shopping-metropole.jpeg" alt="Logo 16">
-        <img src="imagem/supermercardo-lider.webp" alt="Logo 17">
-        </div>
-      </div>
-    </section>
+  <section class="section">
+    <h2 style="text-align: center;">Algumas empresas que encontramos o imóvel certo ou ajudamos na comercialização. No Estado do Pará</h2>
+    <div class="logos-empresas">
+      <img src="imagem/Assaí_Atacadista_logo.png" alt="Assaí">
+      <img src="imagem/atacadao.jpeg" alt="Atacadão">
+      <img src="imagem/Auto-Norte-Vertical.png" alt="Auto Norte">
+      <img src="imagem/boulevard.jpeg" alt="Boulevard">
+      <img src="imagem/caixa.png" alt="Caixa">
+      <img src="imagem/CASTANHEIRA-ferro-aço.jpeg" alt="Castanheira">
+      <img src="imagem/comprar-Cometa_Motocenter.png" alt="Cometa">
+      <img src="imagem/correios.png" alt="Correios">
+      <img src="imagem/ECONOMICO.avif" alt="Econômico">
+      <img src="imagem/grao-para.png" alt="Grão Pará">
+      <img src="imagem/logo-revemar-home.png" alt="Revemar">
+      <img src="imagem/lojas-americanas.png" alt="Americanas">
+      <img src="imagem/parque.png" alt="Parque">
+      <img src="imagem/shopee.png" alt="Shopee">
+      <img src="imagem/HDS.webp" alt="HDS">
+      <img src="imagem/shopping-metropole.jpeg" alt="Shopping Metrópole">
+      <img src="imagem/supermercardo-lider.webp" alt="Líder">
+    </div>
+  </section>
+
+
   </main>
 
   <footer>
