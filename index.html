@@ -4,153 +4,717 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Marcos Fiala - Corretor de Imóveis</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   <link rel="icon" href="favicon.ico">
-  <meta property="og:title" content="Marcos Fiala - Corretor de Imóveis">
-  <meta property="og:description" content="Especialista em imóveis residenciais e comerciais em Belém.">
-  <meta property="og:image" content="capa.jpg">
+  <meta name="description" content="Marcos Fiala - Corretor de Imóveis CRECI 4077. Especialista em imóveis residenciais e comerciais em Belém, Pará. +18 anos de experiência no mercado imobiliário.">
+  <meta name="keywords" content="corretor, imóveis, Belém, Pará, CRECI, venda, aluguel, casa, apartamento, terreno, comercial">
+  <meta name="author" content="Marcos Fiala">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Marcos Fiala - Corretor de Imóveis CRECI 4077">
+  <meta property="og:description" content="Especialista em imóveis residenciais e comerciais em Belém, Pará. +18 anos de experiência no mercado imobiliário.">
+  <meta property="og:image" content="WhatsApp Image 2025-07-07 at 20.28.23.jpeg">
+  <meta property="og:url" content="https://fialaimoveis.com">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Marcos Fiala - Corretor de Imóveis">
+  <meta name="twitter:description" content="Especialista em imóveis residenciais e comerciais em Belém, Pará.">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --primary-gold: #FFD700;
+      --dark-gold: #B8860B;
+      --light-gold: #FFF8DC;
+      --bg-primary: #0a0a0a;
+      --bg-secondary: #1a1a1a;
+      --text-primary: #ffffff;
+      --text-secondary: #e0e0e0;
+      --shadow-gold: 0 4px 20px rgba(255, 215, 0, 0.3);
+      --gradient-gold: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+    }
+    
+    * { 
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box; 
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
     body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #000000;
-      color: #ffffff;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+      color: var(--text-primary);
       line-height: 1.6;
+      overflow-x: hidden;
     }
     nav {
       position: fixed;
       top: 0; left: 0;
       width: 100%;
-      background-color: #111;
-      padding: 10px 0;
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 15px 0;
       text-align: center;
       z-index: 999;
-      box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3); /* sombra dourada suave */
+      border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+    
+    nav.scrolled {
+      padding: 10px 0;
+      box-shadow: var(--shadow-gold);
     }
     nav a {
-      margin: 0 15px;
-      color: #FFD700;
+      margin: 0 20px;
+      color: var(--primary-gold);
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 500;
+      font-size: 0.95rem;
+      position: relative;
+      transition: all 0.3s ease;
+      padding: 8px 0;
+    }
+    
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 50%;
+      background: var(--gradient-gold);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+    
+    nav a:hover::after {
+      width: 100%;
+    }
+    
+    nav a:hover {
+      color: #FFF;
+      transform: translateY(-2px);
     }
     header {
-      background: radial-gradient(circle at center, rgba(255, 215, 0, 0.1), #000);
+      background: 
+        radial-gradient(ellipse at top, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
+        linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
       text-align: center;
-      padding: 100px 20px 60px;
+      padding: 120px 20px 80px;
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="0.5" fill="%23FFD700" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+      pointer-events: none;
     }
     header img {
-      width: 220px;
-      border-radius: 12px;
-      box-shadow: 0 6px 14px rgba(255, 215, 0, 0.4);
+      width: 250px;
+      max-width: 90vw;
+      border-radius: 20px;
+      box-shadow: 
+        0 20px 40px rgba(255, 215, 0, 0.3),
+        0 0 0 1px rgba(255, 215, 0, 0.2);
+      margin-bottom: 30px;
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 2;
+    }
+    
+    header img:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 
+        0 25px 50px rgba(255, 215, 0, 0.4),
+        0 0 0 1px rgba(255, 215, 0, 0.3);
+    }
+    
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700;
+      margin-bottom: 10px;
+      background: var(--gradient-gold);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      position: relative;
+      z-index: 2;
+    }
+    
+    header p {
+      font-size: clamp(1rem, 2vw, 1.3rem);
+      color: var(--text-secondary);
       margin-bottom: 20px;
+      font-weight: 300;
+      position: relative;
+      z-index: 2;
     }
     .typing-text {
-      font-size: 1.2rem;
-      color: #f0e68c;
-      margin-top: 10px;
-      height: 30px;
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      color: var(--light-gold);
+      margin-top: 20px;
+      height: 40px;
+      font-weight: 400;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .typing-text::after {
+      content: '|';
+      animation: blink 1s infinite;
+      color: var(--primary-gold);
+    }
+    
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
     }
     main {
-      padding: 40px 20px;
-      max-width: 900px;
+      padding: 60px 20px;
+      max-width: 1200px;
       margin: auto;
     }
     .section {
-      margin-bottom: 40px;
-      background: #000000;
-      border-radius: 10px;
-      padding: 30px;
-      box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+      margin-bottom: 60px;
+      background: linear-gradient(135deg, rgba(26, 26, 26, 0.8) 0%, rgba(10, 10, 10, 0.9) 100%);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 40px;
+      border: 1px solid rgba(255, 215, 0, 0.1);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.05), transparent);
+      transition: left 0.6s ease;
+    }
+    
+    .section:hover::before {
+      left: 100%;
+    }
+    
+    .section:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-gold);
+      border-color: rgba(255, 215, 0, 0.3);
     }
     .section h2 {
-      color: #f8c400;
-      margin-bottom: 15px;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      background: var(--gradient-gold);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 25px;
+      font-weight: 600;
+      position: relative;
+    }
+    
+    .section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--gradient-gold);
+      border-radius: 2px;
     }
     blockquote {
       font-style: italic;
-      color: #f0e68c;
+      color: var(--light-gold);
       text-align: center;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      position: relative;
+      padding: 20px;
+    }
+    
+    blockquote::before {
+      content: '\201C';
+      font-size: 4rem;
+      color: var(--primary-gold);
+      position: absolute;
+      top: -10px;
+      left: 10px;
+      opacity: 0.3;
     }
     footer {
-      background-color: #000;
-      color: #aaa;
+      background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+      color: var(--text-secondary);
       text-align: center;
-      padding: 20px;
-      margin-top: 60px;
+      padding: 40px 20px;
+      margin-top: 80px;
       font-size: 0.9rem;
+      border-top: 1px solid rgba(255, 215, 0, 0.1);
+      position: relative;
     }
-    a { color: #f0e68c; text-decoration: none; }
-    a:hover { text-decoration: underline; }
+    
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 1px;
+      background: var(--gradient-gold);
+    }
+    a { 
+      color: var(--light-gold); 
+      text-decoration: none; 
+      transition: all 0.3s ease;
+    }
+    a:hover { 
+      color: var(--primary-gold);
+      text-decoration: underline;
+    }
     .metricas {
-      display: flex;
-      justify-content: space-around;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
       text-align: center;
-      flex-wrap: wrap;
+      margin: 40px 0;
     }
     .metricas div {
-      margin: 10px;
+      padding: 30px 20px;
+      background: rgba(255, 215, 0, 0.05);
+      border-radius: 15px;
+      border: 1px solid rgba(255, 215, 0, 0.1);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .metricas div::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(from 0deg, transparent, rgba(255, 215, 0, 0.1), transparent);
+      animation: rotate 4s linear infinite;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .metricas div:hover::before {
+      opacity: 1;
+    }
+    
+    .metricas div:hover {
+      transform: translateY(-10px);
+      border-color: rgba(255, 215, 0, 0.3);
+      box-shadow: var(--shadow-gold);
+    }
+    
+    @keyframes rotate {
+      to { transform: rotate(360deg); }
     }
     .metricas h3 {
-      font-size: 2rem;
-      color: #FFD700;
+      font-size: clamp(2rem, 4vw, 3rem);
+      background: var(--gradient-gold);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 700;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 2;
     }
+    
+    .metricas p {
+      color: var(--text-secondary);
+      font-weight: 400;
+      font-size: 1rem;
+      position: relative;
+      z-index: 2;
+    }
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
     form input, form textarea {
       width: 100%;
-      padding: 10px;
-      border: none;
-      border-radius: 5px;
-      margin-bottom: 10px;
+      padding: 15px;
+      border: 2px solid rgba(255, 215, 0, 0.1);
+      border-radius: 10px;
+      margin-bottom: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+    
+    form input:focus, form textarea:focus {
+      outline: none;
+      border-color: var(--primary-gold);
+      box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
+      background: rgba(255, 255, 255, 0.08);
+    }
+    
+    form input::placeholder, form textarea::placeholder {
+      color: rgba(255, 255, 255, 0.6);
     }
     form button {
-      background-color: #FFD700;
+      background: var(--gradient-gold);
       color: #000;
-      padding: 10px;
+      padding: 15px 40px;
       border: none;
-      border-radius: 5px;
-      font-weight: bold;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 1rem;
       cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    form button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
+    }
+    
+    form button:active {
+      transform: translateY(0);
+    }
+    
+    form button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s ease;
+    }
+    
+    form button:hover::before {
+      left: 100%;
     }
     .logos-empresas {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
       gap: 30px;
-      padding: 20px 0;
+      padding: 40px 0;
+      align-items: center;
+      justify-items: center;
     }
     .logos-empresas img {
       height: 60px;
       max-width: 120px;
       object-fit: contain;
-      filter: brightness(1.2);
-      transition: transform 0.3s ease;
+      filter: brightness(1.2) grayscale(0.3);
+      transition: all 0.4s ease;
+      border-radius: 8px;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 215, 0, 0.1);
     }
     .logos-empresas img:hover {
+      transform: scale(1.1) translateY(-5px);
+      filter: brightness(1.4) grayscale(0);
+      border-color: rgba(255, 215, 0, 0.3);
+      box-shadow: var(--shadow-gold);
+      background: rgba(255, 215, 0, 0.05);
+    }
+    
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      nav a {
+        margin: 0 10px;
+        font-size: 0.9rem;
+      }
+      
+      header {
+        padding: 100px 15px 60px;
+        min-height: 90vh;
+      }
+      
+      main {
+        padding: 40px 15px;
+      }
+      
+      .section {
+        padding: 25px;
+        margin-bottom: 40px;
+      }
+      
+      .metricas {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .logos-empresas {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 20px;
+      }
+      
+      .logos-empresas img {
+        height: 50px;
+      }
+      
+      #sobre-nos {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      #sobre-nos div:first-child {
+        max-width: 200px;
+        margin: 0 auto 20px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      nav {
+        padding: 10px 0;
+      }
+      
+      nav a {
+        margin: 0 8px;
+        font-size: 0.85rem;
+      }
+      
+      header {
+        padding: 90px 10px 50px;
+      }
+      
+      .section {
+        padding: 20px;
+      }
+      
+      form button {
+        padding: 12px 30px;
+      }
+      
+      .whatsapp-float {
+        width: 55px;
+        height: 55px;
+        bottom: 20px;
+        right: 20px;
+      }
+      
+      .whatsapp-float img {
+        width: 28px;
+        height: 28px;
+      }
+      
+      .whatsapp-float::after {
+        display: none;
+      }
+    }
+    
+    /* Loading Animation */
+    .loading {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--bg-primary);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+    
+    .loading.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    
+    .loading-spinner {
+      width: 50px;
+      height: 50px;
+      border: 3px solid rgba(255, 215, 0, 0.1);
+      border-top: 3px solid var(--primary-gold);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    /* Smooth scroll indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: var(--primary-gold);
+      animation: bounce 2s infinite;
+      cursor: pointer;
+      z-index: 2;
+      text-align: center;
+    }
+    
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+      40% { transform: translateX(-50%) translateY(-10px); }
+      60% { transform: translateX(-50%) translateY(-5px); }
+    }
+    
+    /* WhatsApp Float Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+      border-radius: 50%;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      animation: whatsappPulse 3s infinite;
+    }
+    
+    .whatsapp-float::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+      border-radius: 50%;
+      z-index: -1;
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+    
+    .whatsapp-float:hover {
+      transform: translateY(-3px) scale(1.1);
+      box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+    }
+    
+    .whatsapp-float:hover::before {
+      opacity: 0.3;
+      animation: ripple 0.6s ease-out;
+    }
+    
+    .whatsapp-float img {
+      width: 32px;
+      height: 32px;
+      filter: brightness(0) invert(1);
+      transition: all 0.3s ease;
+    }
+    
+    .whatsapp-float:hover img {
       transform: scale(1.1);
+    }
+    
+    @keyframes whatsappPulse {
+      0%, 100% {
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+      }
+      50% {
+        box-shadow: 0 4px 20px rgba(37, 211, 102, 0.6), 0 0 0 10px rgba(37, 211, 102, 0.1);
+      }
+    }
+    
+    @keyframes ripple {
+      0% {
+        transform: scale(1);
+        opacity: 0.3;
+      }
+      100% {
+        transform: scale(1.5);
+        opacity: 0;
+      }
+    }
+    
+    /* WhatsApp tooltip */
+    .whatsapp-float::after {
+      content: 'Fale conosco';
+      position: absolute;
+      right: 70px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+    
+    .whatsapp-float:hover::after {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(-50%) translateX(-5px);
     }
 
   </style>
 </head>
 <body>
+  <div class="loading" id="loading">
+    <div class="loading-spinner"></div>
+  </div>
   <nav>
-    <a href="#Sobre nós">Sobre nós</a>
-    <a href="#missao">Missão</a>
-    <a href="#servicos">Serviços</a>
-    <a href="#contato">Contato</a>
-    <a href="#localizacao">Localização</a>
-    <a href="https://wa.me/559188410321" target="_blank" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
-      <img src="imagem/WhatsApp.svg.webp" alt="WhatsApp" style="width: 60px; height: 60px;">
-    </a>
-    
+    <a href="#sobre-nos" aria-label="Ir para seção sobre nós">Sobre nós</a>
+    <a href="#missao" aria-label="Ir para seção missão">Missão</a>
+    <a href="#servicos" aria-label="Ir para seção serviços">Serviços</a>
+    <a href="#contato" aria-label="Ir para seção contato">Contato</a>
+    <a href="#localizacao" aria-label="Ir para seção localização">Localização</a>
   </nav>
+  
+  <!-- WhatsApp Float Button -->
+  <a href="https://wa.me/559188410321" target="_blank" class="whatsapp-float" aria-label="Contatar via WhatsApp">
+    <img src="imagem/WhatsApp.svg.webp" alt="WhatsApp - Clique para conversar">
+  </a>
 
-  <header>
+  <header role="banner">
     <img src="WhatsApp Image 2025-07-07 at 20.28.23.jpeg" alt="Logo FIALA Imóveis">
     <h1>Marcos Fiala</h1>
     <p>Corretor de Imóveis - CRECI 4077</p>
     <div class="typing-text" id="typing"></div>
+    <div class="scroll-indicator" onclick="document.querySelector('#sobre-nos').scrollIntoView({behavior: 'smooth'})">
+      <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M7 10l5 5 5-5z"/>
+      </svg>
+      <div style="font-size: 0.8rem; margin-top: 5px;">Role para baixo</div>
+    </div>
   </header>
 
-  <main>
+  <main role="main">
 
   <section class="section" id="sobre-nos" style="display: flex; align-items: stretch; gap: 30px; flex-wrap: wrap; box-shadow: 0 0 20px rgba(255, 215, 0, 0.7);">
     <div style="flex: 1; min-width: 220px; max-width: 300px; overflow: hidden; border-radius: 10px;">
@@ -167,7 +731,7 @@
     </div>
   </section>
 
-  <section class="section" id="missao" style="background: #f7f7f7; color: #000;">
+  <section class="section" id="missao" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); color: #000; border: 1px solid rgba(255, 215, 0, 0.2);">
     <h2 style="color: #FFD700;">Sempre buscando o melhor</h2>
     <p>
       Nosso compromisso é entregar mais do que imóveis — é proporcionar confiança, tranquilidade e satisfação em cada negociação. Atuamos com transparência, segurança e excelência em cada etapa do processo, porque acreditamos que superar expectativas não é um diferencial, é uma obrigação com quem confia no nosso trabalho.
@@ -207,10 +771,10 @@
 
     <section class="section">
       <h2>Envie sua mensagem</h2>
-      <form>
-        <input type="text" placeholder="Seu nome" required>
-        <input type="email" placeholder="Seu email" required>
-        <textarea placeholder="Sua mensagem..." rows="4" required></textarea>
+      <form name="contact">
+        <input type="text" name="nome" placeholder="Seu nome" required>
+        <input type="email" name="email" placeholder="Seu email" required>
+        <textarea name="mensagem" placeholder="Sua mensagem..." rows="4" required></textarea>
         <button type="submit">Enviar</button>
       </form>
     </section>
@@ -252,11 +816,32 @@
 
   </main>
 
-  <footer>
+  <footer role="contentinfo">
     <p>&copy; 2025 Marcos Fiala - Corretor de Imóveis</p>
   </footer>
 
   <script>
+    // Loading Screen
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loading').classList.add('hidden');
+        setTimeout(() => {
+          document.getElementById('loading').style.display = 'none';
+        }, 500);
+      }, 1000);
+    });
+    
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      const nav = document.querySelector('nav');
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+    
+    // Typing animation
     const text = "Encontre o imóvel ideal no Pará com quem entende do assunto.";
     let i = 0;
     function type() {
@@ -279,13 +864,15 @@
       typeChar();
     }
 
-    window.onload = () => {
-      type();
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(type, 1000);
+      
+      // Initialize heading animations
       const headings = document.querySelectorAll('h2');
       headings.forEach(el => {
         const original = el.textContent;
         el.textContent = '';
-        const observer = new IntersectionObserver((entries, obs) => {
+        const headingObserver = new IntersectionObserver((entries, obs) => {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
               animateHeading(el, original);
@@ -293,9 +880,47 @@
             }
           });
         }, { threshold: 0.5 });
-        observer.observe(el);
+        headingObserver.observe(el);
       });
-    };
+      
+      // Form submission with validation
+      const form = document.querySelector('form');
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          
+          const button = form.querySelector('button');
+          const originalText = button.textContent;
+          
+          button.textContent = 'Enviando...';
+          button.disabled = true;
+          
+          // Simulate form submission
+          setTimeout(() => {
+            button.textContent = 'Mensagem Enviada!';
+            button.style.background = 'linear-gradient(135deg, #28a745 0%, #20c997 100%)';
+            
+            setTimeout(() => {
+              button.textContent = originalText;
+              button.disabled = false;
+              button.style.background = '';
+              form.reset();
+            }, 3000);
+          }, 2000);
+        });
+      }
+      
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const target = document.querySelector(link.getAttribute('href').replace(' ', '-').toLowerCase());
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+    });
   </script>
 
   <script src="https://unpkg.com/scrollreveal"></script>
